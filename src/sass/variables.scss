@@ -1,0 +1,31 @@
+$font-families : (
+  sans_serif_natalie: (ヒラギノ角ゴ ProN, Hiragino Kaku Gothic ProN, メイリオ, Meiryo, ＭＳ Ｐゴシック, Helvetica Neue, Helvetica, Arial, Roboto, Droid Sans, sans-serif),
+);
+
+// "Helvetica Neue",Helvetica,Arial,"游ゴシック体","Yu Gothic",YuGothic,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"Helvetica Neue",Helvetica,Arial,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+
+
+$body-color : #4A4A4A;
+$body-bg    : white;
+
+$colors:(
+  primary: #790101,
+  red: rgb(167, 18, 49),
+  // primary: #990000,
+  white: #F1F1F1,
+  ash: #B89E9E,
+);
+
+
+$link-color: map-get($colors, red);
+$link-decoration: none;
+$link-hover-color: darken($link-color, 30%);
+$link-hover-decoration: none;
+
+$grid_breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);

@@ -1,0 +1,82 @@
+<svg id="knossos" viewBox="0 0 200 160">
+  <!--
+    total length of each path can be calculated from SVG API: getTotalLength()
+  -->
+  <path
+    d="
+      M 105  105
+      m -20  -20
+      a  15   15 0 0 1  30   0
+      a  10   10 0 0 0  20   0
+      a  35   35 0 0 0 -70   0
+      a  20   20 0 0 0  20  20
+      h  40
+      a  20   20 0 0 0  20 -20
+      a  45   45 0 0 0 -90   0
+      a  30   30 0 0 0  30  30
+      a  10   10 0 0 1   0  20
+      a  50   50 0 0 1 -50 -50
+      a  65   65 0 0 1 130   0
+      a  40   40 0 0 1 -40  40
+    "
+    id="knossos-path-1" fill="none" stroke="#000" opacity="1.0"
+    stroke-dasharray="856.88"
+  >
+  </path>
+  <path
+    d="
+      M 105  105
+      m  20  -20
+      a  25   25 0 0 0  -50   0
+      a  10   10 0 0 0   20   0
+      a   5    5 0 0 1   10   0
+      v  40
+      a  20   20 0 0 1  -20  20
+      a  60   60 0 0 1  -60 -60
+      a  75   75 0 0 1  150   0
+      a  50   50 0 0 1  -50  50
+      a  10   10 0 0 1    0 -20
+      a  30   30 0 0 0   30 -30
+      a  55   55 0 0 0 -110   0
+      a  40   40 0 0 0   40  40
+    "
+    id="knossos-path-2" fill="none" stroke="#000" opacity="1.0"
+    stroke-dasharray="919.77"
+  >
+  </path>
+  <path
+    d="
+      M 105 105
+      m  20  35
+      a  15 15 0 0 1 0 -30
+      a  25  25 0 0 0  25 -25
+      a  50  50 0 0 0   -100  0
+      a  35  35 0 0 0  35 35
+      a   5   5 0 0 1    0 10
+      a  45  45 0 0 1   -45  -45
+      a  60  60 0 0 1 120   0
+      a  35  35 0 0 1   -35 35
+      a   5   5 0 0 0    0 10
+      a  45  45 0 0 0  45  -45
+      a  70  70 0 0 0  -140   0
+      a  55  55 0 0 0  55 55
+      a  15  15 0 0 0   0   -30
+      a  25  25 0 0 1   -25  -25
+      a  40  40 0 0 1  80   0
+      a  15  15 0 0 1   -15 15
+      a  15  15 0 0 1  -15 -15
+      a  10  10 0 0 0  -20 0
+      a  5   5 0 0 1   -10 0
+      a  20 20 0 0 1  40 0
+      a  5 5 0 0 0 10 0
+      a  30 30 0 0 0 -60 0
+      a  15 15 0 0 0 15 15
+      a  15 15 0 0 0 15 -15
+    "
+    id="knossos-ariadne" fill="none" stroke="red" stroke-width="1" stroke-dasharray="1547.4" stroke-dashoffset="1547.4"
+  >
+    <animate attributeType="XML" attributeName="stroke-dashoffset"
+      from="1547.4" to="0" dur="38.2s" fill="freeze"
+    ></animate>
+  </path>
+</svg>

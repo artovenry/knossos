@@ -1,0 +1,5 @@
+mixin yoyo(attr, from, to, dur)
+  - var ids= ["yoyo" + Math.floor(Math.random() * 10000), "yoyo" + Math.floor(Math.random() * 10000)]
+  - var begins= [`0ms; ${ids[1]}.end`, `${dur};${ids[0]}.end`]
+  animate(id= ids[0] attributeType="XML" attributeName=attr from=from to=to dur=dur begin=begins[0])
+  animate(id= ids[1] attributeType="XML" attributeName=attr from=to to=from dur=dur begin=begins[1])

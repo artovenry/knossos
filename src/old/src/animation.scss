@@ -1,0 +1,99 @@
+// TODO cubic-bezierの引数を適切に（designs.coffeeから引っ張る）
+
+$CUBIC_BEZIER:(
+  default : (.91,.94,.35,.96),
+  ray     : (0,.68,.03,.96),
+  screen_2: (.07,.56,.57,.96),
+);
+
+@function bez($key){
+  @return cubic-bezier(#{map-get($CUBIC_BEZIER, $key)});
+}
+
+
+$RAYS: (
+  (175.000000, 215.000000),
+  (175.000000, 138.000000),
+  (175.000000, 184.000000),
+  (175.000000, 218.000000),
+  (175.000000, 218.000000),
+  (175.000000, 218.000000),
+  (159.000000, 218.000000),
+  (113.000000, 218.000000),
+  (73.000000 , 218.000000),
+  (0.000000  , 218.000000),
+  (15.000000 , 218.000000),
+  (78.000000 , 149.000000),
+  (152.000000, 65.000000),
+  (175.000000, 114.000000),
+  (174.000000, 0.000000),
+);
+@mixin rayTransformOf($index){
+  $ORIGIN_X : 174; $ORIGIN_Y: 218;
+  $x: nth(nth($RAYS, $index), 1); $y: nth(nth($RAYS, $index), 2);
+  $translate:  translate(#{$x}px, #{$y}px);
+  @if $x >= $ORIGIN_X{
+    // QUAD: 0
+    @if $y < $ORIGIN_Y{transform-origin: 0px #{$ORIGIN_Y - $y}px;}
+    // QUAD: 3
+    @else {transform-origin: #{$x - $ORIGIN_X}px #{$y - $ORIGIN_Y}px;}
+  }
+  @else {
+    // QUAD: 1
+    @if $y < $ORIGIN_Y{transform-origin: #{$ORIGIN_X - $x}px #{$ORIGIN_Y - $y}px;}
+    // QUAD: 2
+    @else {transform-origin: #{$ORIGIN_X - $x}px #{$y - $ORIGIN_Y}px;}
+  }
+  @keyframes pulserAnimation-#{$index} {
+    from{transform: $translate scale(0);}
+    to{transform: $translate scale(1);}
+  }
+  transform: $translate scale(0);
+}
+
+
+#top-screen{
+  @keyframes screenAnimation{from {opacity: 0;}to   {opacity: 1;}}
+  background-color: rgb(167,18,49);
+  opacity: 0;
+  animation: 3000ms #{bez(screen_2)} 1000ms forwards screenAnimation;
+}
+#top-pulser{
+  stroke: lighten(#a6c4d2, 10%);stroke-width: 0.4;
+  g{
+    $i : 2;
+    @while $i <= length($RAYS) {
+      &:nth-of-type(#{$i}){
+        @include rayTransformOf($i);
+        $duration: random(25) * 1000;
+        animation: #{$duration}ms #{bez(ray)} 1500ms forwards pulserAnimation-#{$i};
+      }
+      $i: $i + 1;
+    }
+    &:nth-of-type(1){
+      @include rayTransformOf(1);
+      animation: 3200ms ease-out 2500ms forwards pulserAnimation-1;
+    }
+  }
+}
+
+#top-spannko svg{
+  >g{ fill: #F1F1F1;stroke-width: 1;}
+  @keyframes spannkoAnimation{from {opacity: 0;}to   {opacity: 1;}}
+  opacity: 0;
+  animation: 1200ms linear 6200ms forwards spannkoAnimation;
+}
+
+// #switch{
+//   @keyframes switchAnimation{from {opacity: 0;}to   {opacity: 1;}}
+//   animation: 1200ms ease-out 7500ms forwards switchAnimation;
+//   opacity: 0;
+// }
+
+// #circle{
+//   @keyframes circleAnimation{
+//     to{stroke-dashoffset: 0;}
+//   }
+//   stroke-dasharray: 200;stroke-dashoffset: 200;
+//   animation: 1200ms linear 7500ms forwards circleAnimation;
+// }

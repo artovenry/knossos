@@ -1,0 +1,15 @@
+html,
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background: #060200;
+}
+
+.ring {
+  stroke: #56FEFE;
+  stroke-width: 2;
+}
