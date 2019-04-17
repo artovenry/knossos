@@ -1,5 +1,5 @@
-@import "variables";
-@import "mixins";
+@import "../sass/variables";
+@import "../sass/mixins";
 @import "animation";
 #top{
   width: 100vw;height: 100vh;overflow: hidden;

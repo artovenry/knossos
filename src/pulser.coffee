@@ -1,6 +1,7 @@
-import {design_4 as design} from "./Top/designs"
+import Vue from "vue/dist/vue.esm.js"
+import {design_1 as design} from "./pulser/Top/designs"
 vueOption=
-  el: "#v-top"
+  el: "#v-app"
   mounted: ->
     do ANIM= ->requestAnimationFrame(ANIM) if TWEEN.update()
   mixins: [design]

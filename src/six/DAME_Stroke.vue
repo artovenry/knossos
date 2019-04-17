@@ -38,7 +38,7 @@
             dasharray: length = Math.sqrt(Math.pow(@cmds[2], 2)+Math.pow(@cmds[3],2))
             dashoffset: if @animate then length else 0
 
-          when TYPES.CURVE then do ->
+          when TYPES.CURVE then do =>
             [r, theta]= [@cmds[2], @theta];
             length= Math.PI * r * theta / 180
             totalLength=
@@ -52,7 +52,7 @@
         switch @type
           when TYPES.LINE
             "#{leading} l #{@cmds[2]} #{@cmds[3]}"
-          when TYPES.CURVE then do ->
+          when TYPES.CURVE then do =>
             B= 0.552284749831; R= 1 - B
             [r, type]= values[2..3];type= +type
 

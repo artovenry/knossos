@@ -19,10 +19,10 @@
             stroke-q(c="4 4 4 1"  begin="birth"  :dur="0.8")
 </template>
 <script lang="coffee">
-  import Stroke from "./Design5/Stroke.vue"
+  import Stroke from "./Stroke.vue"
   # import Motion from "./Design5/Motion.vue"
-  StrokeL= _.extend Stroke, props: _.extend(Stroke.props, type: 'l')
-  StrokeC= _.extend Stroke, props: _.extend(Stroke.props, type: 'c')
+  StrokeL= _.extend Stroke, props: _.extend(Stroke.props, type: default:'l')
+  StrokeC= _.extend Stroke, props: _.extend(Stroke.props, type: default:'c')
   # c="x, y, r, type"
   StrokeQ= _.extend StrokeC, computed: _.extend(StrokeC.computed, theta: ->90)
   # c="x, y, r, type"

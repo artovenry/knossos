@@ -46,7 +46,7 @@
 
 </template>
 <script lang="coffee">
-  import Draw from "./Design52/Draw.vue"
+  import Draw from "./Draw.vue"
   export default
     components: {d:Draw}
     data: ->

@@ -22,6 +22,10 @@ module.exports=
     # D3とSnap.svgのテストを兼ねて。
     ring: "./src/ring.coffee"
 
+    # スパン子トップページ、パイオニア2号から借用
+    pulser: "./src/pulser.coffee"
+    pulser_style: "./src/pulser.scss?extract"
+
     # スパン子の一般ページの色的構想の超初期
     general: "./src/general.coffee"
 
@@ -37,8 +41,19 @@ module.exports=
     # 音楽付き。ランダムによじれた曲線が動く、おもしろいやつ。赤い球が、迷宮の中心から外に飛び出してゆくアニメ
     four: "./src/four.coffee"
 
-    #
+    # 白地のアニメ。下から動きながら、迷宮が成長するやつ、途中で終わる
     five: "./src/five.coffee"
+
+    # fiveと同じ。コードを改良したっぽい
+    six: "./src/six.coffee"
+
+    # fiveの改良版、完全な迷宮のまでアニメ、上昇と拡大を伴う
+    seven: "./src/seven.coffee"
+
+    # テアトロンの中を赤い球が踊りながら、周回するやつ。迷宮のアニメーションはない
+    eight: "./src/eight.coffee"
+
+
   module:
     rules: do ->
       babelLoader=
@@ -62,7 +77,9 @@ module.exports=
             DEFAULT: use: loaders(extract= no)
   plugins: _.compact _.flatten _.values
     provide: new webpack.ProvidePlugin
-      "_" : "underscore"
+      _ : "underscore"
+      TWEEN : "@tweenjs/tween.js"
+      Color : "color-js"
     vue: new VueLoaderPlugin
     extract: new MiniCssExtractPlugin filename: "[name].css"
     # html: [

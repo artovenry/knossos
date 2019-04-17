@@ -1,7 +1,7 @@
-@import "variables";
-@import "mixins";
-@import "global";
-@import "top";
+@import "./sass/variables";
+@import "./sass/mixins";
+@import "./pulser/global";
+@import "./pulser/top";
 
 #nav{
   display: none;

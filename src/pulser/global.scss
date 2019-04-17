@@ -27,7 +27,7 @@ a:not([href]):not([tabindex]) {
   &:focus {outline: 0;}
 }
 
-.text-hide{@include text-hide;}
+// .text-hide{@include text-hide;}
 .clearfix{
   &::after {
     display: block;
