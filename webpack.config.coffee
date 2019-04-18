@@ -19,45 +19,11 @@ module.exports=
       path.join(__dirname, "src")
     ]
   entry:
-    # D3とSnap.svgのテストを兼ねて。
-    ring: "./src/ring.coffee"
-
-    # スパン子トップページ、パイオニア2号から借用
-    pulser: "./src/pulser.coffee"
-    pulser_style: "./src/pulser.scss?extract"
-
-    # スパン子の一般ページの色的構想の超初期
-    general: "./src/general.coffee"
-
-    # 真ん中であかっぽい靄のかかった中心の星が脈動してて、背景が濃い紺色、中心に向かって迷宮の壁が描かれている
-    one: "./src/one.coffee"
-
-    # 背景黒、青と緑で描かれた迷宮（アニメ無し）
-    two: "./src/two.coffee"
-
-    # 音楽付き。左右から観客席の半円周が交互に伸びるアニメ
-    three: "./src/three.coffee"
-
-    # 音楽付き。ランダムによじれた曲線が動く、おもしろいやつ。赤い球が、迷宮の中心から外に飛び出してゆくアニメ
-    four: "./src/four.coffee"
-
-    # 白地のアニメ。下から動きながら、迷宮が成長するやつ、途中で終わる
-    five: "./src/five.coffee"
-
-    # fiveと同じ。コードを改良したっぽい
-    six: "./src/six.coffee"
-
-    # fiveの改良版、完全な迷宮のまでアニメ、上昇と拡大を伴う
-    seven: "./src/seven.coffee"
-
-    # テアトロンの中を赤い球が踊りながら、周回するやつ。迷宮のアニメーションはない
-    eight: "./src/eight.coffee"
-
-
+    main: "./src/main.coffee"
   module:
     rules: do ->
       babelLoader=
-        loader: "babel-loader", options: presets: ["@babel/env"]
+        loader: "babel-loader", options: presets: ["@babel/env"], plugins: ["transform-vue-jsx"]
       _.values
         JS     : test: /\.js$/, use: [babelLoader], exclude: /node_modules/
         COFFEE : test: /\.coffee$/, use: [babelLoader, {loader: "coffee-loader"}]
